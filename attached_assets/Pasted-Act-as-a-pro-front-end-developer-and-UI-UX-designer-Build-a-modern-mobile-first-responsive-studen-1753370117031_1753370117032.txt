@@ -1,0 +1,66 @@
+Act as a pro front-end developer and UI/UX designer. Build a modern, mobile-first, responsive student portfolio website with a white-violet glossy (glassmorphism) aesthetic. The site should feel premium, animation-rich, and have Firebase integration. Follow this feature spec:
+
+🔹 1. Navigation Bar
+- Include: Home, About, Projects, Certificates, Contact
+- Always-visible “Resume” button (floating or sticky) on both desktop and mobile. Clicking should open/download the resume.
+
+🔹 2. Entry Animation (No Video)
+- On first load, show a smooth animated welcome screen with text like “Hi, I’m Bharathi. Welcome to my space.”
+- Subtle fade-in or slide animation, with a button like “Enter Portfolio” that transitions into the main site.
+- Entire entry should feel minimal, fast, and professional — no video.
+
+🔹 3. Hero / Landing Page
+- Show my image, name, role, short tagline.
+- Include social icons: GitHub, LinkedIn, Email with clean hover effects.
+- Animate text in a typewriter or fade style.
+- Must be responsive for all screens.
+
+🔹 4. About Me
+- Short paragraph about me.
+- Apply modern entrance animations (slide/zoom-in/fade).
+
+🔹 5. Education Timeline
+- Vertical timeline to show my education (degree, college, dates).
+- Each entry animates into view on scroll.
+
+🔹 6. Skills Section
+- Animated horizontal scroll (right-to-left auto carousel) showing my tech skills.
+- Use icons or chip-style labels with hover animation.
+
+🔹 7. Projects
+- Show top 3 featured projects (data pulled from Firebase admin panel).
+- Card style with title, tech stack, live/demo link, and GitHub.
+- “View All Projects” button goes to full projects page.
+
+🔹 8. Certificates
+- Certificate cards slide in left-to-right (carousel-like), similar to https://www.bharathi-portfolio.xyz/
+
+🔹 9. Contact Form
+- Firebase Firestore backend to store contact form submissions.
+- Fields: Name, Email, Message.
+- Toast notification after success.
+
+🔹 10. Floating Chatbot
+- Bottom-right chatbot icon.
+- It should only answer questions based on portfolio data (education, projects, skills).
+- It must “speak like me” — friendly but professional tone, no irrelevant chatter.
+
+🔹 11. Admin Panel (/admin)
+- Secure login with Firebase Auth.
+- Allow managing Projects, Certificates, and Resume link.
+- Neat dashboard UI with CRUD functionality.
+
+🔹 12. Design Guidelines
+- Theme: White background with violet-glass glow effects.
+- Animations: Clean, subtle, micro-interactions (no heavy effects).
+- Typography: Minimal, elegant.
+- Entire site must be mobile-first, responsive, and polished.
+
+🔹 Deliverables:
+- Complete frontend (React preferred, or HTML/JS/CSS)
+- Firebase backend (Auth + Firestore)
+- Admin panel with Firebase security rules
+- JSON/data.js structure for dynamic content
+- Instructions for deployment (Netlify or Vercel)
+
+⚠️ Avoid using boilerplate templates. Build it custom. Match or exceed quality of https://www.bharathi-portfolio.xyz/ but add fresh UI interactions and upgraded UX.

@@ -1,0 +1,78 @@
+You are a full-stack developer and Firebase expert. Analyze my current portfolio website: https://www.bharathi-portfolio.xyz/ and based on its structure, build a fully functional admin panel that lets me edit and manage every section of the site in real time using Firebase Firestore.
+
+🔐 The admin panel must be located at `/admin` and be protected by Firebase Authentication (email/password login).
+
+🎯 Admin Panel Features — Based on the Live Site:
+
+1. 🔸 Hero / Landing Section
+   - Editable: Name, Role/Tagline, Profile Image URL
+   - Social Links: GitHub, LinkedIn, Mail
+   - Save to Firestore and reflect immediately on live site
+
+2. 🔸 About Me Section
+   - Short bio paragraph (rich text optional)
+   - Update instantly from admin panel
+
+3. 🔸 Education Timeline
+   - Add/Edit/Delete education entries:
+     - Degree, Institute Name, From - To Duration, Description
+   - Displayed as vertical timeline on the frontend
+
+4. 🔸 Skills (Animated Horizontal Scroll)
+   - Add/Delete skills (text or icon-based)
+   - Realtime update to frontend skill carousel
+   - Optional: Drag-and-drop to reorder skills
+
+5. 🔸 Projects Section
+   - CRUD for project cards:
+     - Title, Description, Tech Stack, GitHub Link, Live Link, Thumbnail/Image URL
+     - Mark projects as “featured” (only 3 will show on home page)
+   - All other projects shown on a separate full “Projects” page
+
+6. 🔸 Certificates Carousel
+   - Add/Edit/Delete certificate entries:
+     - Title, Certificate Image URL, Issuer, Date
+   - Displayed as left-to-right slider on the main site
+
+7. 🔸 Resume Button
+   - Upload or link resume file
+   - Resume button on site should always reflect the latest file (sticky on desktop + mobile)
+
+8. 🔸 Contact Form Submissions
+   - View all messages submitted via portfolio contact form (Name, Email, Message, Timestamp)
+   - Stored in Firestore
+   - Optional: Mark as “read” or delete entries
+
+9. 🔸 Floating Chatbot Control
+   - Toggle chatbot visibility (on/off)
+   - Edit what the bot can say about me (basic Q&A data source stored in Firestore)
+   - The bot only responds based on portfolio info — nothing extra or unrelated
+
+10. 🔸 Global Site Settings (optional)
+   - Change theme color (default: white + violet glance)
+   - Toggle animation effects
+   - Enable/disable sections dynamically
+
+📁 Firestore Database Design:
+- Use collections for `hero`, `about`, `education`, `skills`, `projects`, `certificates`, `resume`, `contact`, `chatbot`, and `settings`
+- Structure data cleanly for real-time syncing with frontend
+
+🔐 Firebase Auth Setup:
+- Email/password based login
+- Route `/admin` should be protected — only logged-in users can view/edit content
+- Logout button in dashboard
+
+🧠 Technical Requirements:
+- React + Tailwind CSS preferred
+- Firebase Firestore + Auth
+- Real-time data sync across site
+- Admin dashboard must be clean, responsive, and easy to use
+- Success/failure toasts, modals for editing, etc.
+
+🎁 Deliverables:
+- Complete frontend code for admin panel
+- Firebase setup with Firestore structure & Auth
+- Secure routing and Firestore rules
+- All necessary JSON/data structure to control frontend sections dynamically
+
+👉 Avoid generic templates. Build the admin system based on **live site layout and flow**: https://www.bharathi-portfolio.xyz/, but make it extensible, reusable, and mobile-friendly.

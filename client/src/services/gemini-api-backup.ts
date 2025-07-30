@@ -1,5 +1,5 @@
 // ================================
-// GEMINI AI CHATBOT SERVICE - ENHANCED
+// GEMINI AI CHATBOT SERVICE
 // ================================
 import { websiteConfig, personalInfo, educationData, skillsData, projectsData, certificatesData } from '../data/website-data';
 
@@ -174,7 +174,7 @@ Analyze the question thoroughly, then provide a comprehensive and helpful respon
             threshold: "BLOCK_MEDIUM_AND_ABOVE"
           },
           {
-            category: "HARM_CATEGORY_HATE_SPEECH", 
+            category: "HARM_CATEGORY_HATE_SPEECH",
             threshold: "BLOCK_MEDIUM_AND_ABOVE"
           },
           {
@@ -272,6 +272,74 @@ const getEnhancedFallbackResponse = (userMessage: string): string => {
 
   // General response with guidance
   return "🤖 **I'm here to help!** I can provide detailed information about Bharathi's *education*, *technical skills*, *innovative projects*, and professional experience.\n\n❓ **Try asking about**: his college journey, programming skills, AI projects, certificates, or get some coding motivation! What would you like to explore? 😊";
+};
+
+    const data = await response.json();
+    
+    if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+      return data.candidates[0].content.parts[0].text;
+    } else {
+      throw new Error('Invalid response format from Gemini API');
+    }
+
+  } catch (error) {
+    console.error('Gemini API Error:', error);
+    
+    // Fallback to local responses for faster, reliable responses
+    return getFallbackResponse(userMessage);
+  }
+};
+
+// Fallback responses when API is unavailable
+const getFallbackResponse = (userMessage: string): string => {
+  const message = userMessage.toLowerCase();
+
+  if (message.includes("education") || message.includes("study") || message.includes("degree")) {
+    return "🎓 He's currently pursuing a *B.Tech in Information Technology* at Kongunadu College of Engineering and Technology (2023-2027). He completed his Higher Secondary Education from The Modern Academy with focus on Mathematics and Computer Science. Check the *Education* section for his complete academic timeline!";
+  }
+  
+  if (message.includes("skills") || message.includes("technology") || message.includes("tech")) {
+    const skills = skillsData.map((skill: any) => skill.name).slice(0, 5).join(", ");
+    return `💻 His technical skills include *${skills}* and many more! He's passionate about full-stack development and AI/ML. Explore the *Skills* section to see his complete tech stack and proficiency levels!`;
+  }
+  
+  if (message.includes("projects") || message.includes("work") || message.includes("portfolio")) {
+    return "🚀 He's built amazing projects like:\n\n• **AI-Powered Smart Farming Platform**\n• **StudentConnect** collaboration platform\n• This beautiful portfolio website!\n\nEach project showcases different aspects of his development skills. Check the **Projects** section for live demos and source code!";
+  }
+  
+  if (message.includes("github") || message.includes("code") || message.includes("repository")) {
+    return `💻 You can find all his code and projects on **GitHub**! He regularly commits new projects and contributions. Visit his GitHub profile or click the GitHub icon in the header to explore his repositories!`;
+  }
+  
+  if (message.includes("experience") || message.includes("background")) {
+    return "👨‍💻 He's a passionate IT student specializing in **full-stack development** with experience in modern web technologies, *AI/ML concepts*, and database management. He enjoys contributing to innovative projects and continuously learning new technologies!";
+  }
+  
+  if (message.includes("contact") || message.includes("reach") || message.includes("email")) {
+    return `📧 You can reach him at **${personalInfo.email}** or through the **Contact** section on this website. He's always open to discussing new opportunities, collaborations, and innovative projects!`;
+  }
+  
+  if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
+    return "👋 **Hello! Nice to meet you!** I'm here to help you learn more about *Bharathi's* background, skills, and projects. Feel free to ask about his education, achievements, or any tech-related questions!";
+  }
+
+  if (message.includes("certificates") || message.includes("certification") || message.includes("achievement")) {
+    return "🏆 He has several certifications including:\n\n• **Front End Web Developer Certification** from Infosys Springboard\n• Internship completion certificates\n• Various course completions in web development\n\nCheck the **Certificates** section for his complete achievement timeline!";
+  }
+
+  if (message.includes("motivation") || message.includes("inspire") || message.includes("advice")) {
+    return "💪 Bharathi believes in *continuous learning* and hands-on practice! His journey shows that with dedication and curiosity, you can master any technology. Start with small projects, build consistently, and never stop exploring new tools!";
+  }
+
+  if (message.includes("learn") || message.includes("start") || message.includes("begin")) {
+    return "🌟 Start with the basics, build projects, and stay curious! Bharathi learned by doing - from simple websites to complex AI applications. Check his *Projects* section for inspiration, and remember: every expert was once a beginner!";
+  }
+
+  if (message.includes("10th") || message.includes("12th") || message.includes("school")) {
+    return "🏫 He completed his *10th grade* with excellent marks and his *12th grade* from The Modern Academy Matric Hr. Sec. School with focus on Mathematics and Computer Science. His strong foundation in academics helped shape his tech journey!";
+  }
+
+  return "I can help you learn about Bharathi's *education*, *skills*, *projects*, and experience. Feel free to ask about his journey, achievements, or get some coding motivation! 😊 What would you like to know?";
 };
 
 export default generateGeminiResponse;

@@ -47,7 +47,7 @@ export default function HeroSection() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="w-24 h-24 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden glass-violet p-1 relative"
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden glass-violet p-1 relative"
           >
             <OptimizedImage
               src={siteData.photo}

@@ -70,14 +70,14 @@ export default function AllCertificates() {
                 >
                   <div className="glass-violet rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-all duration-300">
                     {/* Certificate Image */}
-                    <div className="relative mb-4 overflow-hidden rounded-lg">
+                    <div className="relative mb-4 overflow-hidden rounded-lg bg-white border border-slate-200">
                       <img
                         src={cert.imageUrl}
                         alt={cert.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                        className="w-full h-48 object-contain bg-white transition-transform duration-300 hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                     </div>
 
                     {/* Certificate Info */}
@@ -181,11 +181,11 @@ export default function AllCertificates() {
               </div>
 
               {/* Certificate Image */}
-              <div className="mb-6">
+              <div className="mb-6 bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
                 <img
                   src={selectedCert.imageUrl}
                   alt={selectedCert.title}
-                  className="w-full max-h-[60vh] object-contain rounded-lg shadow-lg bg-white"
+                  className="w-full max-h-[60vh] object-contain rounded-lg bg-white"
                 />
               </div>
 

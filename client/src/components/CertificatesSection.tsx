@@ -83,15 +83,15 @@ export default function CertificatesSection() {
                   className="flex-shrink-0 glass-violet rounded-xl p-4 md:p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer"
                   style={{ width: cardWidth }}
                 >
-                  <div className="mb-3 md:mb-4 overflow-hidden rounded-lg relative group">
+                  <div className="mb-3 md:mb-4 overflow-hidden rounded-lg relative group bg-white shadow-sm">
                     <motion.img
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                       src={cert.imageUrl}
                       alt={cert.title}
-                      className="w-full h-32 md:h-48 object-cover"
+                      className="w-full h-32 md:h-48 object-contain bg-white"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileHover={{ opacity: 1, scale: 1 }}
@@ -221,14 +221,14 @@ export default function CertificatesSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+            className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
             onClick={closeModal}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="glass-violet rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-start mb-6">
@@ -248,7 +248,7 @@ export default function CertificatesSection() {
                   <img
                     src={selectedCert.imageUrl}
                     alt={selectedCert.title}
-                    className="w-full rounded-lg shadow-lg"
+                    className="w-full rounded-lg shadow-lg bg-white border border-slate-200"
                   />
                 </div>
                 <div className="space-y-4">
